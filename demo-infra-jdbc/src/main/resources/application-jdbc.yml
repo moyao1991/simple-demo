@@ -1,0 +1,56 @@
+
+spring:
+  shardingsphere:
+    datasource:
+      names: catalog,node0
+      catalog:
+        type: com.zaxxer.hikari.HikariDataSource
+        username: sa
+        password: sa
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://127.0.0.1/catalog
+        hikari:
+          minimum-idle: 5
+          maximum-pool-size: 30
+          connection-timeout: 1000
+          validation-timeout: 250
+          data-source-properties:
+            autoReconnect : true
+            socketTimeout : 60000
+            useSSL : true
+            serverTimezone : GMT+8
+      node0:
+        type: com.zaxxer.hikari.HikariDataSource
+        username: sa
+        password: sa
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://127.0.0.1/node01
+        hikari:
+          minimum-idle: 5
+          maximum-pool-size: 30
+          connection-timeout: 1000
+          validation-timeout: 250
+          data-source-properties:
+            autoReconnect : true
+            socketTimeout : 60000
+            useSSL : true
+            serverTimezone : GMT+8
+    props:
+      sql.show: true
+    sharding:
+      default-data-source-name: catalog
+      default-database-strategy:
+        inline:
+          sharding-column: shop_id
+          algorithm-expression: node${(shop_id % 1)}
+      tables:
+        trade_detail:
+          actual-data-nodes: node0.trade_detail
+mybatis-plus:
+  type-handlers-package: com.moyao.demo.infra.db.typehandler
+
+
+
+
+
+

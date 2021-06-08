@@ -3,7 +3,7 @@ package com.moyao.demo.infra.db.dao;
 import org.springframework.stereotype.Service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.moyao.demo.infra.rpc.db.mapper.TradeDetailMapper;
+import com.moyao.demo.infra.db.mapper.TradeDetailMapper;
 import com.moyao.demo.infra.db.model.TradeDetailDo;
 
 import lombok.RequiredArgsConstructor;

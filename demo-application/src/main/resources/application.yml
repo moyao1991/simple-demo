@@ -1,3 +1,4 @@
-logging:
-  config: classpath:logback.xml
-
+## application.yml默认加载，不需要在properties声明
+spring:
+    messages:
+        basename: i18n.messages

@@ -17,16 +17,29 @@
             <artifactId>demo-application</artifactId>
             <version>${project.version}</version>
         </dependency>
-
         <dependency>
             <groupId>com.moyao</groupId>
             <artifactId>demo-interfaces-rpc-client</artifactId>
             <version>${project.version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.moyao</groupId>
+            <artifactId>demo-infra-jdbc</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.moyao</groupId>
+            <artifactId>demo-infra-rpc</artifactId>
+            <version>${project.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo-spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
     </dependencies>
 

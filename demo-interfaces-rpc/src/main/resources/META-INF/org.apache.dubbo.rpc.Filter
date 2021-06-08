@@ -1,0 +1,2 @@
+bizException=com.moyao.demo.interfaces.rpc.filter.BizExceptionFilter
+
