@@ -19,12 +19,20 @@
 | -----| ----| ----|
 | 打包模块 |demo-app-boot|负责打包,环境隔离|
 | 外部依赖 |demo-app-dependon|为了模拟外部rpc的包，可舍弃|
-| 基础设施提供接口 |demo-app-infra|把基础设施所能提供的服务|
+| 基础设施提供接口 |demo-app-infra|其它层要求基础层提供的服务|
 | jdbc基础设施层|demo-infra-jdbc|提供jdbc基础服务|
 | rpc基础设施层|demo-infra-rpc|提供外部依赖基础服务|
 | 核心模块|demo-application|包括"应用层&领域层"两方面|
 | rpc接口层|demo-interfaces-rpc|提供对外rpc接口|
 | web接口层|demo-interfaces-web|提供对外web接口|
+
+## 依赖倒层
+
+根据架构图所描述的，基础设施层应向应用层，领域层提供服务。提供什么样的服务取决于应用层，领域层<br>
+
+![依赖倒转](./images/依赖倒转.png)
+
+demo-app-infra模块则表示向基础设施层，索要的服务
 
 ## CQRS
 以读写分离为主要思路的CQRS模型
